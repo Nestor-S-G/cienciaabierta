@@ -13,6 +13,8 @@
 %  *********************************************************************
 
 % If 'baseline' variable doesn't exist, running peqMain as standalone:
+pkg load financial % add in order to load a package needed to run the program
+
 if ~exist('baseline', 'var')
     clear
     fprintf('\nICSDP: Partial Equilibrium with Idiosyncratic Shocks\n');
