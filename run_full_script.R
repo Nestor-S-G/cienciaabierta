@@ -240,7 +240,7 @@ sum(major_by_n_test$major >2)#Other
     mutate(block_type = factor(block_type, levels = c('S', 'C'),
                                labels = c('S', 'C')))
   
-  windows(width=8, height=8)
+  ggplot(width=8, height=8)
   ggplot(data_dists, aes(x = treatment, y = betting_rate, fill = block_type)) +
     geom_boxplot() +
     scale_x_discrete(name = '',
@@ -342,7 +342,7 @@ sum(major_by_n_test$major >2)#Other
   p_unc <- if_else(p_unc < .001, '***',
                    if_else(p_unc < .01, '**',
                            if_else(p_unc < .05, '*', 'n.s.')))
-  windows(width=8, height=8)
+  ggplot(width=8, height=8)
   ggplot(data_plot_u, aes(x = aaron_mood, y = betting_rate)) +
     geom_bar(stat='identity', position = position_dodge(.9), fill = '#ffd700',
              width = 0.6) +
@@ -408,7 +408,7 @@ sum(major_by_n_test$major >2)#Other
   p_treat <- if_else(p_treat < .001, '***',
                      if_else(p_treat < .01, '**',
                              if_else(p_treat < .05, '*', 'n.s.')))
-  windows(width=8, height=8)
+  ggplot(width=8, height=8)
   ggplot(data_plot_t, aes(x = treatment, y = betting_rate)) +
     geom_bar(stat='identity', position = position_dodge(.9), fill = '#ffd700',
              width = 0.6) +
@@ -631,14 +631,14 @@ load("Model comparison with the lab data_beta40to60_exploration and loss toleran
 
 #Figure 6. Model fit comparisons for participant behavior
 {
-  windows(width=8, height=8)
+  ggplot(width=8, height=8)
   par(mar = c(5, 5.5, 4, 2) + 0.7,cex.lab = 2, mgp = c(3.5, 1.5, 0))
   index=which(Bet_yellow_fit>0.01)
   C=quantile(c(OOS_rational[index], OOS_CbD[index]),0.95)
   plot(OOS_rational[index], OOS_CbD[index],xlim=c(0,C), ylim=c(0,C), xlab = "LL of the base model",ylab="LL of the Pavlovian-augmented variant",pch=20,type="p",las=1,col="blue")
   abline(a=0,b=1,col="black")
   
-  windows(width=8, height=8)
+  ggplot(width=8, height=8)
   par(mar = c(5, 5.5, 4, 2) + 0.7,cex.lab = 2, mgp = c(3.5, 1.5, 0))
   index=which(Bet_yellow_fit>0.01)
   C=max(OOS_rational[index], OOS_RL[index])
@@ -698,7 +698,7 @@ effectsize(wilcox_result)
   
   
   C=max(DA_average,Bet_yellow_fit)
-  windows(width=8, height=8)
+  ggplot(width=8, height=8)
   par(mar = c(5, 5.5, 4, 2) + 0.7,cex.lab = 2, mgp = c(3.5, 1.5, 0))
   plot(DA_average,Bet_yellow_fit, xlim=c(0,C),ylim=c(0,C),xlab = "Average DA metric",ylab="Betting rate in yellow sessions",pch=20,type="p",las=1,col="blue")
   abline(model, col = "red", lwd = 2)
@@ -718,7 +718,7 @@ effectsize(wilcox_result)
     IQR_Upper = medians + IQRs / 2
   )
   library(ggplot2)
-  windows(width=8, height=8)
+  ggplot(width=8, height=8)
   ggplot(plot_data, aes(x = Condition, y = Median, fill = Condition)) +
     geom_bar(stat = "identity", width = 0.4) +
     geom_errorbar(aes(ymin = IQR_Lower, ymax = IQR_Upper), width = 0.2) +
@@ -752,7 +752,7 @@ a=A$a_post
 b=A$b_post
 phi_values <- seq(0, 1, length.out = 100)
 posterior_density <- dbeta(phi_values, a, b)
-windows(width=8, height=8)
+ggplot(width=8, height=8)
 par(mar = c(5, 5.5, 4, 2) + 0.7,cex.lab = 2, mgp = c(3.5, 1.5, 0))
 plot(phi_values, posterior_density, type = "l", lwd = 2, col = "blue",
      xlab = expression(Phi[W]), ylab = "Probability density",
