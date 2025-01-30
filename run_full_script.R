@@ -3,7 +3,7 @@
 script_path <- dirname(rstudioapi::getActiveDocumentContext()$path)
 
 # Set the working directory to the "Data" folder
-setwd(file.path(script_path, "Data"))
+setwd("/home/nestor/Descargas/osfstorage-archive/Reproducibility/Data")
 suppl_code_path=file.path(script_path, "Supplementary Codes")
 
 #Please install the below R Packagaes before running the code
