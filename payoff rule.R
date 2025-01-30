@@ -260,10 +260,10 @@ for(i in 1:N){
 
 
 
-windows(width=8, height=8)
+ggplot(width=8, height=8)
 par(mar = c(5, 5.5, 4, 2) + 0.7,cex.lab = 2, cex.axis=1.2,mgp = c(3.5, 1, 0))
 boxplot(payoff_1_optimal, payoff_1_25, payoff_1_50, payoff_1_75, names=c("Optimal", "10% in yellow", "25% in yellow","50% in yellow"), cex=1.5, ylab="Payouts")
 
-windows(width=8, height=8)
+ggplot(width=8, height=8)
 par(mar = c(5, 5.5, 4, 2) + 0.7,cex.lab = 2, cex.axis=1.2,mgp = c(3.5, 1, 0))
 boxplot(payoff_2_optimal,payoff_2_25, payoff_2_50, payoff_2_75, names=c("Optimal", "25% in yellow", "50% in yellow","75% in yellow"), cex=1.5, ylab="Payouts")
