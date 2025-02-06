@@ -719,7 +719,7 @@ effectsize(wilcox_result)
   )
   library(ggplot2)
   dev.new(width=8, height=8)
-  dev.new(plot_data, aes(x = Condition, y = Median, fill = Condition)) +
+  ggplot(plot_data, aes(x = Condition, y = Median, fill = Condition)) +
     geom_bar(stat = "identity", width = 0.4) +
     geom_errorbar(aes(ymin = IQR_Lower, ymax = IQR_Upper), width = 0.2) +
     labs(y = expression("Median fitted value of   " * kappa[1]), x = "Condition") +
